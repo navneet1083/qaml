@@ -38,6 +38,9 @@ class ChromaDBInit:
         to disk.
         :return:
         """
+        print('*'*20)
+        print(f'Creating DB ')
+        print('*' * 20)
 
         self.vectordb = Chroma.from_documents(documents=self.texts, embedding=self.embedding,
                                               persist_directory=self.persist_loc)

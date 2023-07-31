@@ -26,6 +26,9 @@ class BuildResponse:
             vectordb = chromadb.load_db()
             # get retriever
             self.retriever = vectordb.as_retriever(search_kwargs={"k": 2})
+        print('*' * 20)
+        print(f'Successfully created DB')
+        print('*' * 20)
 
     def process_llm_response(self, llm_response):
         # print(f'llm response : {llm_response}')
@@ -41,8 +44,14 @@ class BuildResponse:
         self.get_db()
 
         # building chain
+        print('*' * 20)
+        print(f'Building langchain')
+        print('*' * 20)
         chains = LangChainPipeline(retriever=self.retriever)
         qa_chain = chains.get_qa_chain()
+        print('*' * 20)
+        print(f'After building langchain')
+        print('*' * 20)
         llm_response = qa_chain(question)
 
         processed_resp = self.process_llm_response(llm_response)
