@@ -1,0 +1,8 @@
+apiVersion: v1
+vectordb:
+  chromadb:
+    paths:
+      doc_path: './resources/KnowledgeDocument(pan_card_services).txt'
+      persist_loc: './resources/docs-db'
+    properties:
+      chunk_size: 1000
