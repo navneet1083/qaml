@@ -6,8 +6,8 @@ attrs==23.1.0
 backoff==2.2.1
 certifi==2023.7.22
 charset-normalizer==2.1.1
-chroma-hnswlib==0.7.1
-chromadb==0.4.3
+chroma-hnswlib
+chromadb
 click==8.1.6
 coloredlogs==15.0.1
 dataclasses-json==0.5.14
@@ -70,4 +70,3 @@ websockets==11.0.3
 wheel==0.38.4
 yarl==1.9.2
 zipp==3.16.2
-pysqlite3-binary
