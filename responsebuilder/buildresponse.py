@@ -49,8 +49,8 @@ class BuildResponse:
         print('*' * 20)
         chains = LangChainPipeline(retriever=self.retriever)
         # getting turbo-llm
-        llm_type = chains.get_turbo_llm()
-        qa_chain = chains.get_qa_chain(llm_type=llm_type)
+        # llm_type = chains.get_turbo_llm()
+        qa_chain = chains.get_qa_chain()
         print('*' * 20)
         print(f'After building langchain')
         print('*' * 20)
