@@ -15,8 +15,8 @@ app = FastAPI()
 config_data = ConfigReader().get_yaml_data()
 br = BuildResponse(config_data=config_data)
 
-os.environ["OPENAI_API_KEY"] = "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"
-# os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
+
 
 # create endpoints / route
 @app.get('/')
