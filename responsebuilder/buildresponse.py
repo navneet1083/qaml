@@ -21,7 +21,7 @@ class BuildResponse:
             print(f'retriever is NONE ********************************************')
             chromadb = ChromaDBInit(doc_path=doc_path, persist_loc=persist_loc)
             # creating db and storing in disk
-            # chromadb.create_db()
+            chromadb.create_db()
             # load the existing db
             vectordb = chromadb.load_db()
             # get retriever
@@ -48,7 +48,9 @@ class BuildResponse:
         print(f'Building langchain')
         print('*' * 20)
         chains = LangChainPipeline(retriever=self.retriever)
-        qa_chain = chains.get_qa_chain()
+        # getting turbo-llm
+        llm_type = chains.get_turbo_llm()
+        qa_chain = chains.get_qa_chain(llm_type=llm_type)
         print('*' * 20)
         print(f'After building langchain')
         print('*' * 20)

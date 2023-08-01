@@ -1,4 +1,4 @@
-# from langchain.chat_models import ChatOpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
@@ -12,10 +12,10 @@ class LangChainPipeline:
         if self.model_name is None:
             self.model_name = 'gpt-3.5-turbo'
 
-    # def get_turbo_llm(self, temperature=0, model_name='gpt-3.5-turbo'):
-    #     turbo_llm = ChatOpenAI(temperature=temperature, model_name=model_name)
-    #
-    #     return turbo_llm
+    def get_turbo_llm(self, temperature=0, model_name='gpt-3.5-turbo'):
+        turbo_llm = ChatOpenAI(temperature=temperature, model_name=model_name)
+
+        return turbo_llm
 
     def get_qa_chain(self, chain_type='stuff', llm_type=None):
         """
