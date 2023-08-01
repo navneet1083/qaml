@@ -21,7 +21,7 @@ class BuildResponse:
             print(f'retriever is NONE ********************************************')
             chromadb = ChromaDBInit(doc_path=doc_path, persist_loc=persist_loc)
             # creating db and storing in disk
-            chromadb.create_db()
+            # chromadb.create_db()
             # load the existing db
             vectordb = chromadb.load_db()
             # get retriever
